@@ -11,7 +11,7 @@ const handleLineInput = (oneLineData) => {
 			oneLineArr[i] === '/'){
 			operatorArr.push(oneLineArr[i]);
 		} else if (Number.isInteger(parseInt(oneLineArr[i], 10))){
-			operandArr.push(oneLineArr[i]);
+			operandArr.push(parseInt(oneLineArr[i], 10));
 		}
 	}
 
