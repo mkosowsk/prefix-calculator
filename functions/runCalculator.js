@@ -4,7 +4,7 @@ const runCalculator = (calculator, operatorArr, operandArr) => {
 	}
 	for (let j = operatorArr.length - 1; j >= 0; j--){
 		if (operatorArr[j] === '+') calculator.add();
-		if (operatorArr[j] === '-') calculator.minus();
+		if (operatorArr[j] === '/') calculator.divide();
 		if (operatorArr[j] === '*') calculator.multiply();
 	}
 	return calculator.value();
