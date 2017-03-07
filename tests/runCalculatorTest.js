@@ -11,22 +11,30 @@ describe('runCalculator function', () => {
         calculator = new Calculator();
         operatorArr = ['*', '+'];
         operandArr = [2, 3, 4];
-    })
+    });
 
     it('returns a number', () => {
         let result = runCalculator(calculator, operatorArr, operandArr);
         expect(typeof result).to.be.number;
-    })
+    });
 
     it('returns the correct answer', () => {
         let result = runCalculator(calculator, operatorArr, operandArr);
-        expect(typeof result).to.be.deep.equal(20);
-    })
+        expect(result).to.be.deep.equal(20);
+    });
 
     it('works without having blank operatorArr', () => {
         operatorArr = [];
         operandArr = [1];
         let result = runCalculator(calculator, operatorArr, operandArr);
-        expect(typeof result).to.be.deep.equal(1);
+        expect(result).to.be.deep.equal(1);
+    });
+
+    it('throws error if there are too many operators', () => {
+        operatorArr = ['+', '*'];
+        operandArr = [1];
+        expect(function(){
+            runCalculator(calculator, operatorArr, operandArr);
+        }).to.throw('Calculator has insufficient operands for this operation');
     })     
-})
+});

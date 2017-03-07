@@ -7,7 +7,7 @@
     "test": "mocha tests/*.js",
     "test-watch": "mocha --watch tests/*.js"
   },
-  "author": "",
+  "author": "Mitch Kosowski",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
