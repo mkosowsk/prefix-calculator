@@ -39,7 +39,11 @@ const runCalculator = (calculator, operatorArr, operandArr) => {
 		else if (operatorArr[j] === '/') calculator.divide();
 		else if (operatorArr[j] === '*') calculator.multiply();
 	}
-	return Math.round(calculator.value());
+	let result = Math.round(calculator.value());
+	if (result < 0) {
+		throw 'Invalid calculator result: < 0 result returned'
+	}
+	return result;
 }
 
 module.exports = {

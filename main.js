@@ -37,6 +37,7 @@ if (process.env.file !== undefined) {
     // File provided through ENV
     if (fs.existsSync(process.env.file)) {
         fs.readFile(process.env.file, 'utf8', main);
+    } else {
+    	throw 'File does not exist';
     }
-
 }
