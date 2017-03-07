@@ -1,7 +1,9 @@
 const handleLineInput = (oneLineData) => {
-	// TODO: Write Error Catcher Here
-	// Add Docstrings
-	// Change this to a Map
+	/**
+	 * Generates arrays for operators and operands from one line of data
+	 * @param {string} oneLineData - string of one line of data from input
+	 * @returns [operatorArr, operandArr] array
+	 */
 	let operatorArr = [];
 	let operandArr = [];
 	let oneLineArr = oneLineData.split(' ');
@@ -14,7 +16,7 @@ const handleLineInput = (oneLineData) => {
 			if (Number.isInteger(int)){
 				operandArr.push(int);
 			}
-			// else throw error
+			else throw 'Invalid character in input.';
 		}
 	}
 
@@ -22,8 +24,13 @@ const handleLineInput = (oneLineData) => {
 }
 
 const runCalculator = (calculator, operatorArr, operandArr) => {
-	// TODO: Write Error Catcher Here
-	// Add Docstrings
+	/**
+	 * Runs calculator on operatorArr and operandArr and returns a value
+	 * @param {class} calculator - prefix calculator using a numStack
+	 * @param {array} operatorArr - array of operators for one line
+	 * @param {array} operandArr - array of operands for one line
+	 * @returns output of the calculator as integer
+	 */
 	for (let i = operandArr.length - 1; i >= 0; i--){
 		calculator.push(operandArr[i]);
 	}
